@@ -1,0 +1,12 @@
+# Remove index.php from the request, maintain the query string
+<IfModule mod_rewrite.c>
+    Options
+    RewriteEngine On
+
+    RewriteBase /
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-l
+
+    RewriteRule ^(.*)$ index.php?$1 [L,QSA]
+</IfModule>
