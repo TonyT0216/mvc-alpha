@@ -31,9 +31,9 @@ class View
         static $twig = null;
         if ($twig === null) {
             $str = dirname(__DIR__) . '/View';
-            ray($str);
             $loader = new FilesystemLoader($str);
             $twig = new Environment($loader);
+            ray($str);
         }
 
         try {

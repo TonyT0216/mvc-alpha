@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\View\View;
+
 class Entry extends Controller
 {
     public function addNewAction()
@@ -15,8 +17,13 @@ class Entry extends Controller
             htmlspecialchars(print_r($this->routeParams, true)) . '</pre></p>';
     }
 
-    public function indexAction()
+    /**
+     * Show the index page
+     *
+     * @return void
+     */
+    public function indexAction() : void
     {
-        echo 'indexAction to Entry controller';
+        View::renderTemplate('Entry/index.html');
     }
 }
