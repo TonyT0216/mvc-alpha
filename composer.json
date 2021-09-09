@@ -6,5 +6,8 @@
             "App\\": "src/"
         }
     },
-    "require": {}
+    "require": {},
+    "require-dev": {
+        "spatie/ray": "^1.30"
+    }
 }
