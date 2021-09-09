@@ -32,9 +32,12 @@ class Home extends Controller
      *
      * @return void
      */
-    public function indexAction()
+    public function indexAction() : void
     {
-        View::render('Home/index.php');
+        View::render('Home/index.php',[
+            'name' => 'Tony',
+            'colors' => ['red', 'green', 'blue']
+        ]);
     }
 
 }

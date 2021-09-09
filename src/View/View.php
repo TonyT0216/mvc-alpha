@@ -7,8 +7,10 @@ namespace App\View;
  */
 class View
 {
-    public static function render($view)
+    public static function render($view, $args = [])
     {
+        extract($args, EXTR_SKIP);
+
         $file = "../src/View/$view";
 
         if (is_readable($file)) {
