@@ -33,7 +33,6 @@ class View
             $str = dirname(__DIR__) . '/View';
             $loader = new FilesystemLoader($str);
             $twig = new Environment($loader);
-            ray($str);
         }
 
         try {
