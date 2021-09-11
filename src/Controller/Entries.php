@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\View\View;
+use App\Model\Entry;
 
 class Entry extends Controller
 {
