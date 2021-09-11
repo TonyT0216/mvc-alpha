@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\View\View;
 use App\Model\Entry;
 
-class Entry extends Controller
+class Entries extends Controller
 {
     public function addNewAction()
     {
@@ -25,6 +25,9 @@ class Entry extends Controller
      */
     public function indexAction() : void
     {
-        View::renderTemplate('Entry/index.html');
+        $entries = Entry::getAll();
+        View::renderTemplate('Entries/index.html', [
+            'entries' => $entries
+        ]);
     }
 }
