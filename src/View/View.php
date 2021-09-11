@@ -2,6 +2,7 @@
 
 namespace App\View;
 
+use Exception;
 use Twig\Environment;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
@@ -13,6 +14,9 @@ use Twig\Loader\FilesystemLoader;
  */
 class View
 {
+    /**
+     * @throws Exception
+     */
     public static function render($view, $args = []) : void
     {
         extract($args, EXTR_SKIP);
@@ -22,7 +26,7 @@ class View
         if (is_readable($file)) {
             require $file;
         } else {
-            echo "$file not found";
+            throw new Exception("$file not found");
         }
     }
 
