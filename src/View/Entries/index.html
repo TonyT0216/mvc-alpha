@@ -6,4 +6,10 @@
 
     <h1>Entries</h1>
 
+    <ul>
+        {% for entry in entries %}
+        <h2>{{ entry.title }}</h2>
+        <p>{{ entry.content }}</p>
+        {% endfor %}
+    </ul>
 {% endblock %}
